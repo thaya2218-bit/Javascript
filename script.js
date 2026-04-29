@@ -1,110 +1,100 @@
-// Task 1 - Variable Update
+// 1️⃣ Create Student Data
+let students = [
+ {id:1, name:"Naveen", mark:85, course:"MERN"},
+ {id:2, name:"John", mark:45, course:"Python"},
+ {id:3, name:"Priya", mark:72, course:"Java"},
+ {id:4, name:"Arun", mark:95, course:"React"}
+];
 
-console.log("Task 1 - Variable Update");
 
-var num = 50;
-num = 100;
-console.log(num);
+// 📌 Task 1: Print All Students
+console.log("Task 1:");
+for(let s of students){
+    console.log(s.id, s.name, s.mark, s.course);
+}
 
-// Task 2 - Task 2: Let Variable Math
 
-console.log("Task 2 - Let Variable Math"); 
+// 📌 Task 2: Pass / Fail
+console.log("\nTask 2:");
+for(let s of students){
+    if(s.mark >= 50){
+        console.log(s.name + " - Pass");
+    } else {
+        console.log(s.name + " - Fail");
+    }
+}
 
-let marks = 80;
-marks = marks + 10;
-console.log(marks);
 
-// Task 3 - Const Value
+// 📌 Task 3: Grade System
+console.log("\nTask 3:");
+for(let s of students){
+    if(s.mark >= 90){
+        console.log(s.name + " - A Grade");
+    } else if(s.mark >= 75){
+        console.log(s.name + " - B Grade");
+    } else if(s.mark >= 50){
+        console.log(s.name + " - C Grade");
+    } else {
+        console.log(s.name + " - Fail");
+    }
+}
 
-console.log("Task 3 - Const Value");
 
-const price = 500;
-let finalPrice = price + 100;
-console.log(finalPrice);
+// 📌 Task 4: Topper Student
+console.log("\nTask 4:");
+let topper = students[0];
 
-// Task 4: Printing Statements
+for(let s of students){
+    if(s.mark > topper.mark){
+        topper = s;
+    }
+}
+console.log("Topper is " + topper.name + " - " + topper.mark);
 
-console.log("Task 4 - Printing Statements");
 
-console.log("Welcome Team");
-console.log(2026);
-console.log(true);
+// 📌 Task 5: Course Search (React)
+console.log("\nTask 5:");
+for(let s of students){
+    if(s.course === "React"){
+        console.log(s);
+    }
+}
 
-// Task 5: Datatype Check
 
-console.log("Task 5 - Datatype Check");
+// 📌 Task 6: Add New Student
+console.log("\nTask 6:");
+students.push({id:5,name:"Rahul",mark:88,course:"Node JS"});
 
-console.log(typeof "JavaScript");
-console.log(typeof 250);
-console.log(typeof false);
+for(let s of students){
+    console.log(s);
+}
 
-// Task 6: Array Task
 
-console.log("Task 6 - Array Task");
+// 📌 Task 7: Attendance System
+console.log("\nTask 7:");
+let status = "present";
 
-let fruits = ["Apple", "Banana", "Mango", "Orange", "Grapes"];
+switch(status){
+    case "present":
+        console.log("Welcome");
+        break;
+    case "absent":
+        console.log("Mark Absent");
+        break;
+    case "leave":
+        console.log("Approved Leave");
+        break;
+    default:
+        console.log("Invalid Status");
+}
 
-console.log(fruits);       
-console.log(fruits[0]);       
-console.log(fruits[fruits.length - 1]);
 
-// Task 7: Object Task
+// 📌 Task 8: Login System
+console.log("\nTask 8:");
+let username = "admin";
+let password = "1234";
 
-console.log("Task 7 - Object Task");
-
-let student = {
-  name: "Naveen",
-  age: 20,
-  course: "MERN"
-};
-
-console.log(student.name);
-console.log(student.age);
-
-// Task 8: Arithmetic Operators
-
-console.log("Task 8 - Arithmetic Operators");
-
-console.log(20 + 10);
-console.log(50 - 25);
-console.log(5 * 5);
-console.log(100 / 4);
-console.log(20 % 3);
-
-// Task 9: Increment / Decrement
-
-console.log("Task 9 - Increment / Decrement");
-
-let x = 5;
-x++;
-console.log(x);
-
-let y = 10;
-y--;
-console.log(y);
-
-// Task 10: Comparison Operators
-
-console.log("Task 10 - Comparison Operators");
-
-console.log(10 > 5);
-console.log(5 < 2);
-console.log(20 == "20");
-console.log(15 === "15");
-console.log(10 != 8);
-
-// Task 11: Logical Operators
-
-console.log("Task 11 - Logical Operators");
-
-console.log(5 > 2 && 10 > 3);
-console.log(7 < 5 || 8 > 2);
-console.log(!(10 > 5));
-
-// Task 12: Ternary Operator
-
-console.log("Task 12 - Ternary Operator");
-
-let age = 18;
-
-console.log(age >= 18 ? "Eligible" : "Not Eligible");
+if(username === "admin" && password === "1234"){
+    console.log("Login Success");
+} else {
+    console.log("Invalid User");
